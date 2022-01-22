@@ -17,11 +17,9 @@ const FormLogin = (props) => {
     initialValues:initialValues(),
     validationSchema:Yup.object(validationSchema()),
     onSubmit: async (formData)=>{
-      console.log(formData);
       setLoading(true)
       try {
         const response = await loginApi(formData);    
-        console.log(response);
         if(response.statusCode) throw "Usuario o email no encontrado"
         login(response)
         setLoading(false)

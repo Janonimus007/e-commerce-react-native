@@ -30,6 +30,7 @@ export async function loginApi(formData){
       body:JSON.stringify(formData),
     };
     const response = await fetch(url,params);
+    console.log('response desde login api',response)
     const result = await response.json()
     return result
   } catch (error) {

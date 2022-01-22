@@ -7,7 +7,9 @@ import {getAddressesApi} from '../api/address'
 import useAuth from '../hooks/useAuth'
 import {sizes} from 'lodash'
 import AddressList from '../components/AddressList'
-const Addresses = () => {
+const Addresses = (props) => {
+  const {route:{params}} = props
+  console.log(props)
   const navigation = useNavigation()
   const [reloading, setReloading] = useState(null)
   const [addresses, setAddresses] = useState(null)
@@ -16,9 +18,13 @@ const Addresses = () => {
     useCallback(
       () => {
         (async ()=>{
-          const response = await getAddressesApi(auth)
-          setAddresses(response)
-          setReloading(false)
+        
+            const response = await getAddressesApi(auth)
+            console.log('esta es mi direccion ',response)
+            setAddresses(response)
+            setReloading(false)
+        
+         
         })()
       },[reloading],
     )

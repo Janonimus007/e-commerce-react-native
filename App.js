@@ -30,7 +30,7 @@ export default function App() {
    
   }, [])
   const login =(user)=>{
-    console.log("LOGIN DESDE APP.js");
+    console.log("LOGIN DESDE APP.js ",user);
     setTokenApi(user.jwt)
     setAuth({
       token:user.jwt,

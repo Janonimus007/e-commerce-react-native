@@ -1,12 +1,18 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
+import { StatusBar } from 'react-native-web'
+import NewProduct from '../components/NewProduct'
+import Search from '../components/Search'
 
 const Home = () => {
   return (
-    <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-
-      <Text>Estoy en el Home</Text>
-    </View>
+    <>
+      <StatusBar backgroundColor={'#264871'}/>
+      <Search/>
+      <ScrollView>
+        <NewProduct/>
+      </ScrollView>
+    </>
   )
 }
 

@@ -3,12 +3,11 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 import Cart from '../screens/Cart'
 import Home from '../screens/Home'
-import Favorites from '../screens/Favorites'
-import Account from '../screens/Account'
+import Favorites from '../screens/Favorites'     
 import Awesome from 'react-native-vector-icons/FontAwesome'
 import { StyleSheet } from 'react-native'
-import { SafeAreaInsetsContext } from 'react-native-safe-area-context'
 import AccountStack from './AccountStack'
+import ProductStack from './ProductStack'
 
 const Tab = createMaterialBottomTabNavigator()
 
@@ -24,7 +23,7 @@ const AppNavigation = () => {
       >
         <Tab.Screen
           name="home"
-          component={Home}
+          component={ProductStack}
           options={{
             title:"Inicio"
           }}
